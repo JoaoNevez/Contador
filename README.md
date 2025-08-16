@@ -15,8 +15,4 @@ Um **contador simples** feito com HTML, CSS e JavaScript que conta de 0 até 100
 - CSS3
 - JavaScript (Vanilla JS)
 
-## 📝 Como Usar
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/SeuUsuario/contador-simples.git
+##
