@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador Simples</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #1e1e1e;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .contador {
+      font-size: 5rem;
+      padding: 20px 40px;
+      background: #333;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #ff6f61;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #ff3b2e;
+    }
+
+    .container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="contador" id="contador">0</div>
+    <button onclick="startContador()">Iniciar Contador</button>
+  </div>
+
+  <script>
+    let count = 0;
+    let interval;
+
+    function startContador() {
+      clearInterval(interval); // garante que não haja múltiplos intervalos
+      count = 0;
+      document.getElementById('contador').textContent = count;
+
+      interval = setInterval(() => {
+        count++;
+        document.getElementById('contador').textContent = count;
+
+        if (count >= 100) { // define até onde o contador vai
+          clearInterval(interval);
+        }
+      }, 100); // atualiza a cada 100ms (0,1s)
+    }
+  </script>
+</body>
+</html>
